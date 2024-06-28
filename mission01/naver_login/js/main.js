@@ -49,7 +49,8 @@ emailInput.addEventListener("input", handleEmailInput);
 passwordInput.addEventListener("input", handlePasswordInput);
 
 // 입력된 데이터에 있는 user id와 pw를 비교하여 일치하면 로그인 성공페이지로 이동, 실패하면 alert창 실행
-function handler() {
+function handler(e) {
+  e.preventDefault();
   if (emailReg() && pwReg()) {
     if (emailInput.value === user.id && passwordInput.value === user.pw) {
       window.location.href = "welcome.html";
